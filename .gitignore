@@ -1,8 +1,9 @@
-node_modules/
+/node_modules/
 .env
-usercache/
-fbyebotfreebee3-linux
-fbyebotfreebee3-macos
-fbyebotfreebee3-win.exe
-cookies/
-
+/usercache/
+/fbyebotfreebee3-linux
+/fbyebotfreebee3-macos
+/fbyebotfreebee3-win.exe
+/cookies/
+/multiprof_newscrappy_usa.exe/
+multiprof_newscrappy_usa.exe

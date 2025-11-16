@@ -79,8 +79,8 @@ async function runAutomation() {
         
         
         
-                const dataFile = path.join(os.homedir(), '.multiprof_newscrappy_einrichten_date.json');
-                const max = 14
+                const dataFile = path.join(os.homedir(), '.einrichten.json');
+                const max = 120
         
                 function getTageSince(dateStr) {
                     const einrichten = new Date(dateStr);
@@ -266,7 +266,7 @@ async function runAutomation() {
                 function getRotatedIndex() {
                     const totalProfiles = userprofiles.length;
                     const now = new Date();
-                    return Math.floor(now.getHours() / 2.9) % totalProfiles; // Change the profile every 3 hours
+                    return Math.floor(now.getHours() / 12.9) % totalProfiles; // Change the profile every 3 hours
                 }
         
                 // // Function to get the current profile index based on a 10 MInuts for testing -hour rotation
@@ -967,12 +967,12 @@ async function runAutomation() {
         console.error("❌ Automation failed:", err);
     }
 
-    console.log("⏳ Waiting 3 hours until next run...\n");
+    console.log("⏳ Waiting 13 hours until next run...\n");
 
     // Wait for 3 hours (10 min = 600000 for testing)
     // setTimeout(runAutomation, 2 * 60 * 60 * 1000);
     // Wait for every 3 minuts to start application 
-    setTimeout(runAutomation, 3 * 60 * 60 * 1000);
+    setTimeout(runAutomation, 13 * 60 * 60 * 1000);
 
 }
 

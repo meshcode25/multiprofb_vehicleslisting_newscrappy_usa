@@ -297,7 +297,7 @@ async function  createMarketplaceListing(page,browser){
 
         for(const scrappedvehicledetail of scrappedvehicledetails){
             const title= scrappedvehicledetail.title;          
-            const price= scrappedvehicledetail.price;
+            const pricefull= scrappedvehicledetail.price;
             // const link= "https://www.carbuysell.net/inventory/toyota/corolla/hp570223/";
             const link= scrappedvehicledetail.link;
             const vin= scrappedvehicledetail.vin;
@@ -312,10 +312,19 @@ async function  createMarketplaceListing(page,browser){
             const rowvehiclepath=scrappedvehicledetail.title
 
 
+            const pricestring=pricefull.trim().split(".")
+            const price=pricestring[0];
 
             // Trim leading/trailing spaces, then split by one or more whitespace characters
             const wordsArray1 =rowvehiclepath.trim().split(/\s+/);
-            const vehiclepath = wordsArray1.join("_");
+            
+            const updatevehiclepath=wordsArray1.join("_")
+
+            
+            // A more readable and robust way to create the path string
+            const vehiclepath = `${updatevehiclepath}_${stock_number}`;
+
+            
 
             const YOM=wordsArray1[0];
 
